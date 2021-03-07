@@ -13,7 +13,6 @@ const getUsuarios = async(req, res) => {
         .limit(5),
         Usuario.countDocuments()
     ])
-
     console.log(usuarios);
     res.json({
         ok: true,

@@ -33,6 +33,7 @@ const crearHosptial = async(req, res = response) => {
 }
 
 const actualizarHospital = async(req, res = response) => {
+    console.log(req.body);
     const id = req.params.id;
     const uid = req.uid;
 
@@ -49,7 +50,7 @@ const actualizarHospital = async(req, res = response) => {
             ...req.body,
             usuario: uid
         }
-
+        console.log(cambiosHospital);
         const hospitalActualizado = await Hospital.findByIdAndUpdate(id, cambiosHospital, { new: true });
 
         res.json({
